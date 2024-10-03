@@ -66,10 +66,6 @@ GetWeather is a simple weather application that allows users to get real-time we
 3. Click the "Get Weather" button to retrieve the latest weather information.
 4. The weather details will be displayed for the searched city.
 
-## Screenshots
-
-_Include a few screenshots of the app to visually represent its UI and functionality._
-
 ## Contributing
 
 If you want to contribute to this project, feel free to create an issue or open a pull request.
