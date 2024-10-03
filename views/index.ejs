@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>GetWheather</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <main class="bg-stone-100">
+        <!-- <div class="halfcircle c1 
+        <%if(locals.data.weather[0].icon.includes("n")){ %>  
+           bg-sky-400
+        <%}else{%>
+            bg-amber-400
+        <%} %>
+        "></div> -->
+        <div class="box bg-gradient-to-t
+        <%if(locals.data.weather[0].icon.includes("n")){ %>  
+            from-sky-800 to-sky-600 
+        <%}else{%>
+            from-orange-800 to-orange-600 
+        <%} %>
+         drop-shadow-lg">
+            <div class="heading">
+                <img src="https://openweathermap.org/img/wn/<%=locals.data.weather[0].icon%>@2x.png" alt="" class="w-[70px] h-[70px]">
+                <p class="text-4xl font-bold ">GetWheather</p>
+            </div>
+            <form action="/getWheather" method="post" class="search-box">
+                <input type="text" name="cityy" id="" class="text-xl text-cyan-900 p-1 rounded-md  border-none focus:outline outline-2 outline-offset-2 transition-outline 
+                <%if(locals.data.weather[0].icon.includes("n")){ %>  
+                    outline-cyan-500
+                <%}else{%>
+                    outline-amber-500
+                <%} %>
+                 transition-transform hover:scale-90">
+
+                <button class="
+                <%if(locals.data.weather[0].icon.includes("n")){ %>  
+                    bg-cyan-900 
+                <%}else{%>
+                    bg-amber-900
+                <%} %>
+                rounded-md font-bold transition-transform hover:scale-110" type="submit">Search</button>
+            </form>
+            <div class="content">
+                <div class="city-name">
+                    <p class="text-4xl font-bold drop-shadow-lg transition-transform hover:scale-110 "><%=data.main.temp%> °C</p>
+                    <p class="text-2xl font-bold "><%=data.name%>,<%=data.sys.country%></p>
+                </div>
+                <div class="wheather text-xl font-bold">
+                    <p><%=data.weather[0].main%>,
+                        <%=data.weather[0].description%></p>
+                    </div>
+                    <div class="temprature text-lg 
+                     <%if(locals.data.weather[0].icon.includes("n")){ %>  
+                        text-cyan-200
+                    <%}else{%>
+                        text-amber-200
+                    <%} %>
+                    ">
+                        <p>Min <%=data.main.temp_min%> °C | Max <%=data.main.temp_max%> °C</p>
+                        <p>Humidity <%=data.main.humidity%> g.m-3</p>
+                    </div>
+                    <div class="wind text-lg 
+                     <%if(locals.data.weather[0].icon.includes("n")){ %>  
+                        text-cyan-200
+                    <%}else{%>
+                        text-amber-200
+                    <%} %>
+                    ">
+                        <p>Wind-Speed <%=data.wind.speed%> m/s</p>
+                    </div>
+                </div>
+            </div>
+    </main>
+</body>
+</html>
